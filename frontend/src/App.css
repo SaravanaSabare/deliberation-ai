@@ -1,0 +1,249 @@
+.app {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.input-section {
+  margin-bottom: 30px;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 12px;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+.example-questions {
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.example-label {
+  font-size: 13px;
+  color: #666;
+  margin-right: 4px;
+}
+
+.example-btn {
+  background: #f5f5f5;
+  color: #555;
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.example-btn:hover:not(:disabled) {
+  background: #e8e8e8;
+  border-color: #ccc;
+}
+
+.example-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submit-btn {
+  width: 100%;
+}
+
+button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover:not(:disabled) {
+  background: #0052a3;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  padding: 16px;
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 4px;
+  color: #c33;
+  margin-bottom: 20px;
+}
+
+.results {
+  margin-top: 30px;
+}
+
+.reasoning-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #999;
+  margin-bottom: 8px;
+  margin-top: 24px;
+  font-weight: 600;
+}
+
+.what-would-change {
+  background: #fffbf0;
+  border: 1px solid #f0e68c;
+  border-left: 4px solid #f0ad4e;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.what-would-change h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #856404;
+  font-weight: 600;
+}
+
+.what-would-change p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.final-answer {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.answer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.final-answer h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.final-answer p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.confidence-explanation {
+  font-size: 13px;
+  color: #666;
+  font-style: italic;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.confidence {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.confidence-high {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.confidence-medium {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.confidence-low {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.final-answer p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #222;
+}
+
+.collapsible-section {
+  margin-bottom: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.collapsible-header {
+  width: 100%;
+  padding: 12px 16px;
+  background: #fafafa;
+  border: none;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #666;
+}
+
+.collapsible-header:hover {
+  background: #f0f0f0;
+}
+
+.collapsible-content {
+  padding: 16px;
+  background: white;
+  border-top: 1px solid #e5e5e5;
+}
+
+.collapsible-content p {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #555;
+}
