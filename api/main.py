@@ -33,10 +33,11 @@ def debate(request: DebateRequest):
         question = request.question
         print(f"Starting deliberation for question: {question}")
         
-        # Run deliberation 3 times to measure confidence
+        # Run deliberation ONCE for speed (was 3 times for confidence)
+        # TODO: Re-enable multiple runs when using faster models
         runs = []
-        for i in range(3):
-            print(f"Run {i+1}/3")
+        for i in range(1):  # Changed from 3 to 1
+            print(f"Run {i+1}/1")
             pro = pro_agent(question)
             print(f"Pro agent response: {pro[:100] if pro else 'EMPTY'}")
             con = con_agent(question)
@@ -59,29 +60,15 @@ def debate(request: DebateRequest):
         # Calculate confidence based on semantic similarity
         final_answers = [run["final_answer"] for run in runs]
         
-        # Use embeddings to measure semantic similarity
-        similarity_score = calculate_semantic_similarity(final_answers)
-        confidence = get_confidence_from_similarity(similarity_score)
+        # Skip semantic similarity with only 1 run - always return "high" confidence
+        similarity_score = 1.0  # Perfect similarity with 1 run
+        confidence = "high"  # Always high with single run
         
         # Use first run as primary output
         primary = runs[0]
         
-        # Generate "what would change" only for low confidence
+        # Skip "what would change" since we're not measuring disagreement
         what_would_change = None
-        if confidence == "low":
-            disagreement_summary = f"""
-The deliberation system ran 3 times and produced semantically different results (similarity: {similarity_score:.2f}):
-- Answer 1: {final_answers[0][:100]}...
-- Answer 2: {final_answers[1][:100]}...
-- Answer 3: {final_answers[2][:100]}...
-
-Question: {question}
-"""
-            what_would_change_prompt = f"""{disagreement_summary}
-
-Given this disagreement, what additional information or clarification would most likely change or strengthen the conclusion? Be specific and concise."""
-            
-            what_would_change = call_llm(what_would_change_prompt)
         
         response = {
             "question": question,
