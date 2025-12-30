@@ -1,10 +1,14 @@
-# Backend
-backend/__pycache__/
-backend/*.pyc
-backend/.env
-backend/.env.local
-backend/venv/
-backend/.venv/
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+.env
+.env.local
+venv/
+.venv/
+
+# Backend (old folder - not used in deployment)
+backend/
 
 # Frontend
 frontend/node_modules/
@@ -29,7 +33,6 @@ Thumbs.db
 # Logs
 *.log
 
-# Keep example files
-!**/.env.example
-!**/.env.production.example
-.vercel
+# API cache
+api/__pycache__/
+api/agents/__pycache__/
